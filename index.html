@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eco-Conscious Product Reviews</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;;
+      padding: 10px 0;
+      text-align: center;
+    }
+    h1{
+        color: #ffffff;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-around;
+      background-color: #333;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 20px;
+      display: none; /* Default sections to be hidden */
+    }
+
+    .product {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin: 10px;
+      background-color: #fff;
+      box-shadow: 3px 3px 5px #888888;
+    }
+
+    .product img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Eco-Conscious Product Reviews</h1>
+  </header>
+  <nav>
+    <a href="#home" id="homeLink">Home</a>
+    <a href="#products" id="productsLink">Products</a>
+    <a href="#about" id="aboutLink">About Us</a>
+    <a href="#contact" id="contactLink">Contact Us</a>
+  </nav>
+  <section id="home" style="display: block;">
+    <h2>Welcome to Eco-Conscious Product Reviews</h2>
+    <p>
+      Discover and review eco-friendly products that are good for the planet!
+    </p>
+  </section>
+  <section id="products">
+    <h2>Eco-Friendly Products</h2>
+    <div class="product" id="product1">
+      <h3>Reusable Water Bottle</h3>
+      <p>Stay hydrated with this stylish and eco-friendly water bottle.</p>
+      <img src="images/water_bottle.jpg" alt="Reusable Water Bottle" />
+      <div class="reviews" id="reviews1">
+        <h4>Reviews:</h4>
+        <p>
+          ⭐️⭐️⭐️⭐️⭐️ (5/5) - "Love this bottle! Great for on-the-go and
+          helps reduce plastic waste."
+        </p>
+      </div>
+    </div>
+    <div class="product" id="product2">
+      <h3>Bamboo ToothBrush</h3>
+      <p>
+        Ecofriendly tooth brush
+      </p>
+      <img src="images/bambootoothbrush.jpg" alt="Tooth Brush" />
+      <div class="reviews" id="reviews2">
+        <h4>Reviews:</h4>
+        <p>⭐️⭐️⭐️⭐️ (4/5) - "Durable and stylish water bottle"</p>
+      </div>
+    </div>
+    <div class="product" id="product3">
+      <h3>Organic Cotton T-shirt</h3>
+      <p>Soft and sustainable cotton t-shirt.</p>
+      <img src="images/cotton-tshirt.jpg" alt="T-shirt" />
+      <div class="reviews" id="reviews3">
+        <h4>Reviews:</h4>
+        <p>⭐️⭐️⭐️⭐️ (4/5) - "Get ready to get comfortable feel"</p>
+      </div>
+    </div>
+  </section>
+  <section id="about">
+    <h2>About Us</h2>
+    <img src="images/aboutus.jpg" alt="about us" />
+    <p>Learn about our team and our mission to promote sustainable living.</p>
+  </section>
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>For inquiries, please reach out to us using the form below:</p>
+    <form id="contactForm">
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" />
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" />
+      </div>
+      <div>
+        <label for="message">Message:</label>
+        <textarea id="message"></textarea>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+  <script>
+    // Function to hide all sections
+    function hideAllSections() {
+      document.querySelectorAll('section').forEach(section => {
+        section.style.display = 'none';
+      });
+    }
+
+    // Function to show a specific section
+    function showSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.style.display = 'block'; // You might want to use 'flex' or 'grid' depending on your layout needs
+      }
+    }
+
+    // Event listeners for navigation links
+    document.getElementById('homeLink').addEventListener('click', function(event) {
+      event.preventDefault();
+      hideAllSections();
+      showSection('home');
+    });
+
+    document.getElementById('productsLink').addEventListener('click', function(event) {
+      event.preventDefault();
+      hideAllSections();
+      showSection('products');
+    });
+
+    document.getElementById('aboutLink').addEventListener('click', function(event) {
+      event.preventDefault();
+      hideAllSections();
+      showSection('about');
+    });
+
+    document.getElementById('contactLink').addEventListener('click', function(event) {
+      event.preventDefault();
+      hideAllSections();
+      showSection('contact');
+    });
+
+    // Initialize by hiding all sections and showing the home section
+    hideAllSections();
+    showSection('home'); // Show home section by default on page load
+  </script>
+</body>
+</html>
